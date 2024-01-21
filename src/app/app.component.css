@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'PtSans';
+  src: url("../assets/font/PTSans-Regular.ttf");
+}
+
+main {
+  background-image: url("/src/assets/bg/background.png");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  color: #222831;
+  font-family: 'PtSans', sans-serif;
+}
+
+a {
+  color: #EEEEEE;
+}
+
+a:visited {
+  color: #EEEEEE;
+}
