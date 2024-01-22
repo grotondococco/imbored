@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'PtSans';
+  src: url("assets/font/PTSans-Regular.ttf");
+}
 
 html, body {
   height: 100%;
@@ -7,4 +11,8 @@ html, body {
 body {
   margin: 0;
   font-family: sans-serif;
+}
+a:link, a:visited {
+  color: white;
+  text-decoration: none;
 }
