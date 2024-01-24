@@ -17,26 +17,24 @@ import {NgForOf} from "@angular/common";
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  providers: [ImBoredService, ActivityModel]
+  providers: [ImBoredService]
 })
 export class HomeComponent {
   loading: boolean = true;
-  imBoredService : ImBoredService;
-  activities = new Array<any>;
-  constructor(imBoredService: ImBoredService) {
-    this.imBoredService = imBoredService;
-  }
+  activities : ActivityModel[] = [];
+  constructor(public imBoredService: ImBoredService) {
 
+  }
   ngOnInit(): void {
-    this.loadCard();
+    this.loadCards(20);
   }
 
-  private loadCard(): void{
+  private loadCards(n: number): void{
     this.loading = true;
-    this.imBoredService.getRandomActivity()
-      .subscribe((res)=> {
-        this.activities[0] = res;
-      });
+    let activitiesFromService = this.imBoredService.getRandomActivities(n);
+    for(let activityObs of activitiesFromService ){
+      activityObs.subscribe((activity => this.activities.push(activity)));
+    }
   }
 
 }

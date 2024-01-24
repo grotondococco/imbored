@@ -11,7 +11,11 @@ export class ImBoredService {
   constructor(public http: HttpClient) { }
   public log(msg: any)   { console.log(msg); }
 
-  public getRandomActivity(): Observable<ActivityModel>{
-    return this.http.get<ActivityModel>("http://www.boredapi.com/api/activity/", {responseType:"json"});
+  public getRandomActivities(n: number): Observable<ActivityModel>[]{
+    let res =[];
+    for(let i=0; i<n; i++){
+      res.push(this.http.get<ActivityModel>("http://www.boredapi.com/api/activity/", {responseType:"json"}))
+    }
+    return res;
   }
 }

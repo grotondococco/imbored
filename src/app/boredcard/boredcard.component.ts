@@ -13,22 +13,5 @@ import {ActivityModel} from "../models/activity.model";
 })
 
 export class BoredcardComponent {
-  @Input() model!: ActivityModel;
-  title: string | undefined;
-  accessibility: number | undefined;
-  type: string | undefined;
-  participants: number | undefined;
-  price: number| undefined;
-  link: string | undefined;
-  key: string | undefined;
-
-  constructor(model: ActivityModel) {
-    this.title = model.activity;
-    this.accessibility = model.accessibility;
-    this.type = model.type;
-    this.participants = model.participants;
-    this.price = model.price;
-    this.link = model.link;
-    this.key = model.key;
-  }
+  @Input() model: ActivityModel | undefined;
 }
