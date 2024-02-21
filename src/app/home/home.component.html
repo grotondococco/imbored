@@ -1,3 +1,4 @@
-<div class="content">
+<div class="content" *ngIf="!loading; else test" >
     <app-boredcard *ngFor="let activity of activities" [model]=activity />
 </div>
+<ng-template #test>LOADING....</ng-template>

@@ -1,4 +1,5 @@
 export interface ActivityModel {
+  title: string;
   activity: string;
   accessibility: number;
   type: string;
