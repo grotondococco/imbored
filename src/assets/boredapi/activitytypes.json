@@ -1,0 +1,38 @@
+[
+    {
+      "type": "education",
+      "title": "\uD83D\uDCD6"
+    },
+    {
+      "type": "recreational",
+      "title": "\uD83C\uDFB2"
+    },
+    {
+      "type": "social",
+      "title": "\uD83D\uDC6C"
+    },
+    {
+      "type": "diy",
+      "title": "\uD83D\uDD28"
+    },
+    {
+      "type": "charity",
+      "title": "\uD83D\uDE4C"
+    },
+    {
+      "type": "cooking",
+      "title": "\uD83C\uDF6A"
+    },
+    {
+      "type": "music",
+      "title": "\uD83C\uDFB5"
+    },
+    {
+      "type": "busywork",
+      "title": "\uD83D\uDC77"
+    },
+    {
+      "type": "relaxation",
+      "title": "\uD83D\uDCA4"
+    }
+]

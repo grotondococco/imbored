@@ -22,31 +22,26 @@ import {NgForOf, NgIf} from "@angular/common";
 })
 export class HomeComponent {
   loading: boolean = true;
-  activities : ActivityModel[] = [];
-  titles : string[] = [];
+  activities: ActivityModel[] = [];
+
   constructor(public imBoredService: ImBoredService) {
 
   }
+
   ngOnInit(): void {
-    this.loadCards(5);
+    this.loadCards(10);
   }
 
-  private loadCards(n: number): void{
+  private loadCards(n: number): void {
     this.loading = true;
     let activitiesFromService = this.imBoredService.getRandomActivities(n);
-    // for(let activityObs of activitiesFromService ){
-    //   activityObs.subscribe((activity => this.activities.push(activity)));
-    // }
-    for(let i = 0; i<n ; i++){
-      activitiesFromService[i].subscribe((activity => {
-        activity.title=String(i);
-        this.activities.push(activity);
-        if(i==n-1){
-          this.loading = false;
-          console.log(this.loading);
-        }
-      }));
+    for (let activityObs of activitiesFromService) {
+      activityObs.subscribe((activity => {
+        this.imBoredService.setActivityType(activity);
+        this.activities.push(activity)
+      }))
     }
   }
-
 }
+
+
